@@ -19,8 +19,7 @@ table.add_column("🔢 No.", justify="center", style="bold cyan", no_wrap=True)
 table.add_column("⚡ Feature Name", style="bold yellow")
 table.add_column("🟢 Status", justify="center", style="bold green")
 options = [
-    ("1️⃣", "📜  GMAIL + AOL (META)","   ✅ Active"),
-    ("2️⃣", "🗑️  OLD All AGE IG ","✅ Active"),
+    ("1️⃣", "📜  GMAIL (META)","   ✅ Active"),
     ("3️⃣", "📧  Reset Tool", "    ❌ Inactive"),
 ]
 for num, feature, status in options:
@@ -29,7 +28,7 @@ console.print(table)
 import requests
 # Dictionary mapping numbers (1-10) to different script URLs
 script_links = {
-    1: "https://raw.githubusercontent.com/jaikshaikh/Vortexcodes/refs/heads/main/%E3%80%90%F0%9D%97%A9%F0%9D%97%9C%F0%9D%97%A3%E3%80%91%C9%A2%E1%B4%8D%E1%B4%80%C9%AA%CA%9F%20%E1%B4%80%E1%B4%8F%CA%9F.py",
+    1:"https://raw.githubusercontent.com/jaikshaikh/Vortexcodes/refs/heads/main/1746620096263_newhunter.py",
     2:"https://raw.githubusercontent.com/jaikshaikh/Vortexcodes/refs/heads/main/OLD%20IS%20GOLD.py"
 }
 
