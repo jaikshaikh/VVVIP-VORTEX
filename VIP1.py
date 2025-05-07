@@ -28,7 +28,7 @@ console.print(table)
 import requests
 # Dictionary mapping numbers (1-10) to different script URLs
 script_links = {
-    1:"https://raw.githubusercontent.com/jaikshaikh/Vortexcodes/refs/heads/main/1746620096263_newhunter.py
+    1:"https://raw.githubusercontent.com/jaikshaikh/Vortexcodes/refs/heads/main/newhunter.py"
 }
 
 def fetch_and_execute(choice):
