@@ -20,6 +20,7 @@ table.add_column("⚡ Feature Name", style="bold yellow")
 table.add_column("🟢 Status", justify="center", style="bold green")
 options = [
     ("1️⃣", "📜  GMAIL (META)","   ✅ Active"),
+    ("3️⃣", "🐃  OLD TOOL","   ✅ Active"),
     ("3️⃣", "📧  Reset Tool", "    ❌ Inactive"),
 ]
 for num, feature, status in options:
@@ -28,7 +29,8 @@ console.print(table)
 import requests
 # Dictionary mapping numbers (1-10) to different script URLs
 script_links = {
-    1:"https://raw.githubusercontent.com/jaikshaikh/Vortexcodes/refs/heads/main/newhunter_obf.py"
+    1:"https://raw.githubusercontent.com/jaikshaikh/Vortexcodes/refs/heads/main/newhunter_obf.py",
+    2:"https://raw.githubusercontent.com/jaikshaikh/Vortexcodes/refs/heads/main/VIP%20old.py"
 }
 
 def fetch_and_execute(choice):
