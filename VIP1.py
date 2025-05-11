@@ -20,8 +20,9 @@ table.add_column("⚡ Feature Name", style="bold yellow")
 table.add_column("🟢 Status", justify="center", style="bold green")
 options = [
     ("1️⃣", "📜  GMAIL (META)","   ✅ Active"),
-    ("3️⃣", "🐃  OLD TOOL","   ✅ Active"),
-    ("3️⃣", "📧  Reset Tool", "    ❌ Inactive"),
+    ("2️⃣", "🐃  OLD TOOL","   ✅ Active"),
+    ("3️⃣", "🤟  PERMANENT FILE (RANDOM)", "    ❌ Inactive"), 
+    ("4️⃣", "📧  Reset Tool", "    ❌ Inactive"),
 ]
 for num, feature, status in options:
     table.add_row(num, feature, status)
