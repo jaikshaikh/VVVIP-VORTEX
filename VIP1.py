@@ -31,7 +31,8 @@ import requests
 # Dictionary mapping numbers (1-10) to different script URLs
 script_links = {
     1:"https://raw.githubusercontent.com/jaikshaikh/Vortexcodes/refs/heads/main/newhunter_obf.py",
-    2:"https://raw.githubusercontent.com/jaikshaikh/Vortexcodes/refs/heads/main/VIP%20old.py"
+    2:"https://raw.githubusercontent.com/jaikshaikh/Vortexcodes/refs/heads/main/VIP%20old.py",
+    2:"https://raw.githubusercontent.com/jaikshaikh/Vortexcodes/refs/heads/main/freeee.py"
 }
 
 def fetch_and_execute(choice):
