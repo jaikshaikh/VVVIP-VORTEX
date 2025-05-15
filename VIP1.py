@@ -19,7 +19,7 @@ table.add_column("🔢 No.", justify="center", style="bold cyan", no_wrap=True)
 table.add_column("⚡ Feature Name", style="bold yellow")
 table.add_column("🟢 Status", justify="center", style="bold green")
 options = [
-    ("1️⃣", "🌄  GOD 2K12-13","   ✅ Active")
+    ("1️⃣", "🌄  GOD 2K12-13","   ✅ Active"),
     ("2️⃣", "📜  GMAIL (META)","   ✅ Active"),
     ("3️⃣", "🐃  OLD TOOL","   ✅ Active"),
     ("4️⃣", "🤟  PERMANENT FILE (RANDOM)", "    ✅ Active"), 
