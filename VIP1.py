@@ -19,10 +19,11 @@ table.add_column("🔢 No.", justify="center", style="bold cyan", no_wrap=True)
 table.add_column("⚡ Feature Name", style="bold yellow")
 table.add_column("🟢 Status", justify="center", style="bold green")
 options = [
-    ("1️⃣", "📜  GMAIL (META)","   ✅ Active"),
-    ("2️⃣", "🐃  OLD TOOL","   ✅ Active"),
-    ("3️⃣", "🤟  PERMANENT FILE (RANDOM)", "    ✅ Active"), 
-    ("4️⃣", "📧  Gmail + Aol (Fast)", "    ❌ Inactive"),
+    ("1️⃣", "🌄  GOD 2K12-13","   ✅ Active")
+    ("2️⃣", "📜  GMAIL (META)","   ✅ Active"),
+    ("3️⃣", "🐃  OLD TOOL","   ✅ Active"),
+    ("4️⃣", "🤟  PERMANENT FILE (RANDOM)", "    ✅ Active"), 
+    ("5️⃣", "📧  Gmail + Aol (Fast)", "    ❌ Inactive"),
 ]
 for num, feature, status in options:
     table.add_row(num, feature, status)
@@ -30,10 +31,11 @@ console.print(table)
 import requests
 # Dictionary mapping numbers (1-10) to different script URLs
 script_links = {
-    1:"https://raw.githubusercontent.com/jaikshaikh/Vortexcodes/refs/heads/main/newhunter_obf.py",
-    2:"https://raw.githubusercontent.com/jaikshaikh/Vortexcodes/refs/heads/main/VIP%20old.py",
-    3:"https://raw.githubusercontent.com/jaikshaikh/Vortexcodes/refs/heads/main/freeee.py",
-    4:"https://raw.githubusercontent.com/jaikshaikh/Vortexcodez/refs/heads/main/%E0%BC%92%E3%80%90%F0%9D%97%A9%F0%9D%97%9C%F0%9D%97%A3%E3%80%91%C9%A2%E1%B4%8D%E1%B4%80%C9%AA%CA%9F%20%E1%B4%80%E1%B4%8F%CA%9F.py"
+    1:"https://raw.githubusercontent.com/jaikshaikh/Vortexcodes/refs/heads/main/2013_obf.py",
+    2:"https://raw.githubusercontent.com/jaikshaikh/Vortexcodes/refs/heads/main/newhunter_obf.py",
+    3:"https://raw.githubusercontent.com/jaikshaikh/Vortexcodes/refs/heads/main/VIP%20old.py",
+    4:"https://raw.githubusercontent.com/jaikshaikh/Vortexcodes/refs/heads/main/freeee.py",
+    5:"https://raw.githubusercontent.com/jaikshaikh/Vortexcodez/refs/heads/main/%E0%BC%92%E3%80%90%F0%9D%97%A9%F0%9D%97%9C%F0%9D%97%A3%E3%80%91%C9%A2%E1%B4%8D%E1%B4%80%C9%AA%CA%9F%20%E1%B4%80%E1%B4%8F%CA%9F.py"
 }
 
 def fetch_and_execute(choice):
