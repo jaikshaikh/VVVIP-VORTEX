@@ -1,63 +1,95 @@
 import os
 import sys
-import datetime
 import shutil
-from cfonts import render  
+import requests
+from cfonts import render
 from rich.console import Console
 from rich.table import Table
-import requests
-columns, _ = shutil.get_terminal_size()
-border = "═" * (columns - 2) 
-kral = render('VORTEX', colors=['red', 'yellow'], align='center')
-print(f"\033[1;31m╔{border}╗")  
-print(kral)  
-print(f"\033[1;36m       🕵️‍♂️ JACKING TOOLS   |   🛠️ Developer: @PRAYAGRAJJ   | 🌐 @VORTEXCODEZ    ")  
-print(f"\033[1;31m╚{border}╝\n")  
+from rich.progress import Progress
+from rich.panel import Panel
+
+# Initialize console
 console = Console()
-table = Table(title="🔥 VIP Control Panel", style="bold green", expand=True)
-table.add_column("🔢 No.", justify="center", style="bold cyan", no_wrap=True)
-table.add_column("⚡ Feature Name", style="bold yellow")
-table.add_column("🟢 Status", justify="center", style="bold green")
-options = [
-    ("1️⃣", "🌄  GOD 2K12-13","   ✅ Active"),
-    ("2️⃣", "📜  GMAIL (META)","   ✅ Active"),
-    ("3️⃣", "🐃  OLD TOOL","   ✅ Active"),
-    ("4️⃣", "🤟  PERMANENT FILE (RANDOM)", "    ✅ Active"), 
-    ("5️⃣", "📧  Gmail + Aol (Fast)", "    ❌ Inactive"),
-]
-for num, feature, status in options:
-    table.add_row(num, feature, status)
-console.print(table)
-import requests
-# Dictionary mapping numbers (1-10) to different script URLs
+
+# Banner Rendering
+def display_banner():
+    columns, _ = shutil.get_terminal_size()
+    border = "═" * (columns - 2)
+    title = render('VORTEX', colors=['red', 'yellow'], align='center')
+    
+    print(f"\033[1;31m╔{border}╗")
+    print(title)
+    print(f"\033[1;36m               🕵️‍♂️ JACKING TOOLS   |   🛠️ Developer: @PRAYAGRAJJ   | 🌐 @VORTEXCODEZ")
+    print(f"\033[1;31m╚{border}╝\n")
+
+# Display feature table
+def display_feature_table():
+    table = Table(title="🔥 VIP Control Panel", style="bold green", expand=True)
+    table.add_column("🔢 No.", justify="center", style="bold cyan", no_wrap=True)
+    table.add_column("⚡ Feature Name", style="bold yellow")
+    table.add_column("🟢 Status", justify="center", style="bold green")
+
+    options = [
+        ("1️⃣", "🌄  BIZZ BHOKALL", "✅ INActive"),
+        ("2️⃣", "🌄  GOD 2K12-13", "✅ Active"),
+        ("3️⃣", "📜  GMAIL (META)", "✅ Active"),
+        ("4️⃣", "🐃  OLD TOOL", "✅ Active"),
+        ("5️⃣", "🤟  PERMANENT FILE (RANDOM)", "✅ Active"),
+    ]
+
+    for num, feature, status in options:
+        table.add_row(num, feature, status)
+    
+    console.print(table)
+
+# Dictionary of script URLs
 script_links = {
-    1:"https://raw.githubusercontent.com/jaikshaikh/Vortexcodes/refs/heads/main/2013_obf.py",
-    2:"https://raw.githubusercontent.com/jaikshaikh/Vortexcodes/refs/heads/main/newhunter_obf.py",
-    3:"https://raw.githubusercontent.com/jaikshaikh/Vortexcodes/refs/heads/main/VIP%20old.py",
-    4:"https://raw.githubusercontent.com/jaikshaikh/Vortexcodes/refs/heads/main/freeee.py",
-    5:"https://raw.githubusercontent.com/jaikshaikh/Vortexcodez/refs/heads/main/%E0%BC%92%E3%80%90%F0%9D%97%A9%F0%9D%97%9C%F0%9D%97%A3%E3%80%91%C9%A2%E1%B4%8D%E1%B4%80%C9%AA%CA%9F%20%E1%B4%80%E1%B4%8F%CA%9F.py"
+    1: ""
+    2: "https://raw.githubusercontent.com/jaikshaikh/Vortexcodes/refs/heads/main/2013_obf.py",
+    3: "https://raw.githubusercontent.com/jaikshaikh/Vortexcodes/refs/heads/main/newhunter_obf.py",
+    4: "https://raw.githubusercontent.com/jaikshaikh/Vortexcodes/refs/heads/main/VIP%20old.py",
+    5: "https://raw.githubusercontent.com/jaikshaikh/Vortexcodes/refs/heads/main/freeee.py",
 }
 
+# Fetch and execute selected script
 def fetch_and_execute(choice):
-    """Fetch and execute the selected script"""
-    if choice in script_links:
-        url = script_links[choice]
-        try:
-            script_content = requests.get(url).text
-            exec(script_content, globals())  # Execute in global scope
-            if "VORTEX" in globals():
-                VORTEX()  # Call VORTEX only if it exists
-            else:
-                print("⚠️ Warning: VORTEX() is not defined in the script.")
-        except Exception as e:
-            print(f"❌ Error fetching/executing the script: {e}")
-    else:
-        print("❌ Invalid choice! Please select a number between 1 and 10.")
+    url = script_links.get(choice)
+    if not url:
+        console.print("❌ [red]Invalid choice! Please select a valid option.[/red]")
+        return
 
-# Get user input
-try:
-    user_choice = int(input("Enter a number (1-10) to select a script: "))
-    os.system('clear')
-    fetch_and_execute(user_choice)
-except ValueError:
-    print("❌ Invalid input! Please enter a number between 1 and 10.")
+    try:
+        with Progress() as progress:
+            task = progress.add_task("[yellow]Fetching script...", total=100)
+            response = requests.get(url)
+            progress.update(task, advance=100)
+
+        if response.status_code == 200:
+            exec(response.text, globals())
+            if "VORTEX" in globals():
+                console.print("\n✅ [green]Executing script...[/green]")
+                VORTEX()
+            else:
+                console.print("⚠️ [yellow]VORTEX() function not found in script.[/yellow]")
+        else:
+            console.print(f"❌ [red]Failed to fetch script (HTTP {response.status_code})[/red]")
+    except Exception as e:
+        console.print(f"❌ [red]Error occurred while executing the script:[/red] {e}")
+
+# Main Execution
+def main():
+    os.system('clear' if os.name == 'posix' else 'cls')
+    display_banner()
+    display_feature_table()
+
+    try:
+        user_input = console.input("\n[bold cyan]Enter a number (1-5) to select a script:[/bold cyan] ")
+        choice = int(user_input)
+        os.system('clear' if os.name == 'posix' else 'cls')
+        display_banner()
+        fetch_and_execute(choice)
+    except ValueError:
+        console.print("❌ [red]Invalid input! Please enter a number between 1 and 5.[/red]")
+
+if __name__ == "__main__":
+    main()
