@@ -19,7 +19,7 @@ def display_banner():
     
     print(f"\033[1;31m╔{border}╗")
     print(title)
-    print(f"\033[1;36m               🕵️‍♂️ JACKING TOOLS   |   🛠️ Developer: @PRAYAGRAJJ   | 🌐 @VORTEXCODEZ")
+    print(f"\033[1;36m           🕵️‍♂️ JACKING TOOLS   |   🛠️ Developer: @PRAYAGRAJJ   | 🌐 @VORTEXCODEZ")
     print(f"\033[1;31m╚{border}╝\n")
 
 # Display feature table
