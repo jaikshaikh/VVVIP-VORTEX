@@ -56,7 +56,7 @@ def fetch_and_execute(choice):
 
 # Get user input
 try:
-    user_choice = int(input("Enter a number (1-10) to select a script: "))
+    user_choice = int(input("Enter a number (1-5) to select a script: "))
     os.system('clear')
     fetch_and_execute(user_choice)
 except ValueError:
