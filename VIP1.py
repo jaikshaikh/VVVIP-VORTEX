@@ -30,7 +30,7 @@ def display_feature_table():
     table.add_column("🟢 Status", justify="center", style="bold green")
 
     options = [
-        ("1️⃣", "🌄  BIZZ BHOKALL", "✅ INActive"),
+        ("1️⃣", "🌄  BIZZ BHOKALL", "✅ Active"),
         ("2️⃣", "🌄  GOD 2K12-13", "✅ Active"),
         ("3️⃣", "📜  GMAIL (META)", "✅ Active"),
         ("4️⃣", "🐃  OLD TOOL", "✅ Active"),
@@ -44,7 +44,7 @@ def display_feature_table():
 
 # Dictionary of script URLs
 script_links = {
-    1: ""
+    1: "https://raw.githubusercontent.com/jaikshaikh/Vortexcodes/refs/heads/main/bizzvip.py",
     2: "https://raw.githubusercontent.com/jaikshaikh/Vortexcodes/refs/heads/main/2013_obf.py",
     3: "https://raw.githubusercontent.com/jaikshaikh/Vortexcodes/refs/heads/main/newhunter_obf.py",
     4: "https://raw.githubusercontent.com/jaikshaikh/Vortexcodes/refs/heads/main/VIP%20old.py",
